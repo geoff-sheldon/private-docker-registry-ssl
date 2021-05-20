@@ -1,7 +1,6 @@
 # Five-step setup for private Docker repository with Let's Encrypt SSL
 
-Make sure you have a domain name and SSH access to an instance. This works well under a DigitalOcean's Ubuntu with Docker and Docker Compose installed.
-
+Make sure you have a domain name and SSH access to an instance. This works with htpasswd to create users and passwords.  This is nice because nginx can manage access based on user, so if you ever want distinct read/write permissions this repo can be extended.
 ## Steps
 
 1. Set in `docker-compose.yml` the **REGISTRY_USER, REGISTRY_PASSWORD and DOMAIN** on the Nginx args.

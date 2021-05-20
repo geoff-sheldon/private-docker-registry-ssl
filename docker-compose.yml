@@ -7,8 +7,6 @@ services:
     build:
       context: ./nginx
       args:
-        - REGISTRY_USER=user
-        - REGISTRY_PASSWORD=password
         - DOMAIN=my_domain.com
       dockerfile: ./nginx.dockerfile
     ports:
@@ -17,6 +15,7 @@ services:
     volumes:
       - ./certs:/etc/letsencrypt
       - ./certs-data:/data/letsencrypt
+      - ./auth:/etc/nginx/conf.d/auth
     networks:
       - my-registry-network
     logging:

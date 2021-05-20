@@ -10,6 +10,7 @@ COPY ./entrypoint.sh /entrypoint.sh
 
 RUN echo "$REGISTRY_USER:{PLAIN}$REGISTRY_PASSWORD" >/etc/nginx/conf.d/registry.password && \
 mkdir /etc/letsencrypt && \
+mkdir /etc/nginx/conf.d/auth \
 mkdir /data && \
 mkdir /data/letsencrypt && \
 sed -i "s/@DOMAIN@/${DOMAIN}/g" /default.conf && \
